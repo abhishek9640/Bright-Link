@@ -15,29 +15,55 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
+                                        <div class="col-md-6 form-group">
+                                            <label for="city" class="control-label">Product Name</label>
+                                            <input type="text" id="city" class="form-control" required name="customerCity" placeholder="">
+                                        </div>
                                         <div class="form-group col-md-6">
-                                            <label class="control-label">Date</label>
-                                            <input type="date" name="date" id="todaydate" class="form-control" />
+                                            <label for="name" class="control-label">Vendor Name</label>
+                                            <select name="productName" id="productName" class="form-control">
+                                                <option value="">Vendor Product</option>
+                                                <option value="">Gautam sir</option>
+                                                <option value="">Aahish batra sir</option>
+                                                <option value="">Manish Sir</option>
+                                                <option value="">Shampoo venbor</option>
+                                                <option value="">Oil</option>
+                                            </select>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="name" class="control-label">Customer Name</label>
-                                            <input type="text" name="name" id="customerName" required class="form-control" placeholder="Enter Customer Name" />
+                                            <label for="name" class="control-label">Product Catagory</label>
+                                            <select name="productName" id="productName" class="form-control">
+                                                <option value="">Product</option>
+                                                <option value="">Shampoo</option>
+                                                <option value="">Comb</option>
+                                                <option value="">Remover</option>
+                                            </select>
                                         </div>
-                                        <div class="col-md-12 mb-3 form-group">
-                                            <label for="address" class="control-label">Address: *</label>
-                                            <textarea name="customerAddress" class="form-control" id="address" rows="3" required="required"></textarea>
+
+
+                                        <div class="col-md-6 form-group">
+                                            <label for="dob" class="control-label">Expiry Date</label>
+                                            <input type="date" class="form-control" required id="dob" name="Expdate">
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <label for="city" class="control-label">City: *</label>
-                                            <input type="text" id="city" class="form-control" required name="customerCity" placeholder="City">
+                                            <label for="dob" class="control-label">Manufacturer</label>
+                                            <input type="text" class="form-control" required id="dob" name="manufacturer">
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <label for="mobile" class="control-label">Mobile Number</label>
-                                            <input type="number" class="form-control" id="mobile" required name="customerMobile" placeholder="Customer Mobile No.">
+                                            <label for="dob" class="control-label">Quantity</label>
+                                            <input type="number" class="form-control" required id="dob" name="quantity">
                                         </div>
                                         <div class="col-md-6 form-group">
-                                            <label for="dob" class="control-label">Date Of Birth</label>
-                                            <input type="date" class="form-control" required id="dob" name="customerDOB">
+                                            <label for="dob" class="control-label">Purchase price</label>
+                                            <input type="number" class="form-control" required id="dob" name="buy">
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <label for="dob" class="control-label">Selling price</label>
+                                            <input type="number" class="form-control" required id="dob" name="sell">
+                                        </div>
+                                        <div class="col-md-3 form-group p-2">
+                                            <label class="control-label">Image</label>
+                                            <input type="file" class="px-3" name="pic" accept="image/*">
                                         </div>
 
                                         <div class="col-md-12">
@@ -48,17 +74,15 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th>S.No</th>
-                                                                    <th>Product/Service</th>
-                                                                    <th>Cost</th>
+                                                                    <th>Dimensions</th>
+                                                                    <th>Quantity</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="add-products">
                                                                 <tr>
                                                                     <td>1</td>
                                                                     <td>
-                                                                        <select name="productName" id="productName" class="form-control">
-                                                                            <option value="">Select Product</option>
-                                                                        </select>
+                                                                        <input type="text" name="cost" id="cost" placeholder="Enter the dimension" class="form-control" />
                                                                     </td>
                                                                     <td>
                                                                         <input type="number" name="cost" id="cost" class="form-control" />
@@ -89,6 +113,7 @@
 </div>
 
 <?php include 'includes/footer.php'; ?>
+
 
 <script>
     $(document).ready(function() {

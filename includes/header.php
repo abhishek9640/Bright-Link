@@ -76,7 +76,7 @@ if (!isset($id)) {
                                         <i class="las la-minus"></i><span>Product</span>
                                     </a>
                                 </li>
-                                <li class="">
+                                <li class="vender">
                                     <a href="vendors.php">
                                         <i class="las la-minus"></i><span>Vendor</span>
                                     </a>
@@ -166,7 +166,7 @@ if (!isset($id)) {
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto navbar-list align-items-center">
                                 <li>
-                                    <a href="customers.php" class="btn border add-btn shadow-none mx-2 d-none d-md-block">
+                                    <a href="add-customer.php" class="btn border add-btn shadow-none mx-2 d-none d-md-block">
                                         <i class="las la-plus mr-2"></i>Customer
                                     </a>
                                 </li>
