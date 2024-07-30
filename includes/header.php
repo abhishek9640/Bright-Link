@@ -77,7 +77,7 @@ if (!isset($id)) {
                                     </a>
                                 </li>
                                 <li class="vender">
-                                    <a href="vendors.php">
+                                    <a href="venders.php">
                                         <i class="las la-minus"></i><span>Vendor</span>
                                     </a>
                                 </li>
