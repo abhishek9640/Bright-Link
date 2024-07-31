@@ -56,18 +56,15 @@
                                                                 <tr>
                                                                     <td>1</td>
                                                                     <td>
-                                                                        <select name="productName" id="productName" class="form-control">
+                                                                        <select name="productName" id="service" class="form-control">
                                                                             <option value="">Select service</option>
-                                                                            <option value="">service 1</option>
-                                                                            <option value="">service 2</option>
+
                                                                         </select>
                                                                     </td>
                                                                     <td>
-                                                                        <select name="productName" id="productName" class="form-control">
-                                                                            <option value="">Shampoo</option>
-                                                                            <option value="">Conditionar</option>
-                                                                            <option value="">Serum</option>
-                                                                            <option value="">Jel</option>
+                                                                        <select name="productName" id="services" class="form-control">
+                                                                            <option value="">Services</option>
+
                                                                         </select>
                                                                     </td>
                                                                     <td>
@@ -92,7 +89,6 @@
                                     <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Add</button>
                                 </div>
                             </div>
-
                         </form>
                     </div>
                 </div>
@@ -105,14 +101,38 @@
 
 <script>
     $(document).ready(function() {
+        function loadValue(type, cid) {
+            $.ajax({
+                url: "load-data.php",
+                type: "POST",
+                data: {
+                    type: type,
+                    id: cid
+                },
+                success: function(data) {
+                    if (type == "service") {
+                        $("#services").html(data);
+                    } else {
+                        $("#service").append(data);
+                    }
+                }
+            })
+        }
+        loadValue();
+
+        $("#service").on('change', function() {
+            var service = $("#service").val();
+            loadValue("service", service);
+        })
+
         var counter = 1;
         $('#add_row').click(function() {
             var html = '';
             html += '<tr>';
             html += '<td>' + (counter + 1) + '</td>';
-            html += '<td><select name="productName[]" id="productName' + counter + '" class="form-control"><option value="">Select Service</option><option value="">Service 1</option><option value="">Service 2</option></select></td>';
-            html += '<td><select name="productName[]" id="productName' + counter + '" class="form-control"><option value="">Select Service</option><option value="">Service 1</option><option value="">Service 2</option></select></td>';
-            html += '<td><input type="number" name="cost[]" id="cost' + counter + '" class="form-control" /></td>';
+            html += '<td><select name="productName" id="service' + counter + '" class="form-control"><option value="">Select Service</option></select></td>';
+            html += '<td><select name="productName" id="services' + counter + '" class="form-control"><option value="">SelectService</option></select>';
+            html += '<td><input type="number" name="cost" id="cost' + counter + '" class="form-control" /></td>';
             html += '</tr>';
             $('#add-products').append(html);
             counter++;
